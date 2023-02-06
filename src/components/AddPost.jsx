@@ -29,38 +29,9 @@ const style = {
   p: 4,
 };
 
-function AddPost() {
-  const [open, setOpen] = useState(false);
-  const toggleModel = () => {
-    setOpen(!open);
-  };
+function AddPost({ open, setOpen }) {
   return (
     <Box>
-      <Tooltip
-        title="Add post"
-        sx={{ postion: "fixed", bottom: 20, left: 30 }}
-        onClick={toggleModel}
-      >
-        <Box
-          display="flex"
-          gap={2}
-          justifyContent="center"
-          alignItems="center"
-          mb={2}
-        >
-          <Avatar
-            alt="Remy Sharp"
-            src="https://avatars.githubusercontent.com/u/85134557?v=4"
-          />
-          <TextField
-            sx={{ width: "80%" }}
-            hiddenLabel
-            id="filled-hidden-label-normal"
-            placeholder="Start a post"
-            variant="filled"
-          />
-        </Box>
-      </Tooltip>
       <Modal
         open={open}
         onClose={() => setOpen(false)}
